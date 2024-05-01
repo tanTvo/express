@@ -1,8 +1,13 @@
 const express = require('express')
 const app = express();
-const PORT = 3000
+const bodyParser = require('body-parser');
+const postRoutes = require('./routes/postRoutes')
+const PORT = process.env.PORT || 3000
 
-app.use(express.json());
+app.use(bodyParser.json());
+app.use(express.static('public'));
+app.use('/api/posts', postRoutes);
+
 
 app.get('/', (req, res) => {
     res.send('Hello world')

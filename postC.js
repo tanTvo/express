@@ -8,7 +8,7 @@ exports.getAllPosts = (req, res) => {
 
 exports.createPost = (req, res) => {
     const {title, content, author} = req.body;
-    const newPost = new Post(post.length + 1, title, content, author);
-    posts.push(newPost)
+    const newPost = new Post(posts.length + 1, title, content, author);
+    posts.push(newPost);
     res.status(201).json(newPost);
 };
