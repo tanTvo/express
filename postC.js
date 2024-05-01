@@ -12,3 +12,7 @@ exports.createPost = (req, res) => {
     posts.push(newPost);
     res.status(201).json(newPost);
 };
+
+exports.deletePost = (req, res) => {
+    
+}

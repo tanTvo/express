@@ -7,5 +7,7 @@ router.get('/', postC.getAllPosts);
 
 router.post('/', postC.createPost);
 
+router.delete('/:id', postC.deletePost)
+
 module.exports = router;
 
