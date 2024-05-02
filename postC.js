@@ -3,8 +3,13 @@ const Post = require('./post')
 let posts = []; 
 
 exports.getAllPosts = (req, res) => {
-    res.json(posts);
-}
+    let filteredPosts = posts;
+    if (req.query.author) {
+        filteredPosts = filteredPosts.filter(post => post.author === req.query.author);
+    }
+    res.json(filteredPosts);
+};
+
 
 exports.createPost = (req, res) => {
     const {title, content, author} = req.body;
@@ -15,7 +20,7 @@ exports.createPost = (req, res) => {
 
 exports.deletePost = (req, res) => {
     const postId = req.params.id;
-    const index = post.findIndex(post => post.id === parseInt(postId));
+    const index = posts.findIndex(post => post.id === parseInt(postId));
     if (index !== -1) {
         posts.splice(index, 1);
          res.status(204).send();

@@ -8,6 +8,11 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 app.use('/api/posts', postRoutes);
 
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).json({message: ' server error'})
+})
+
 
 app.get('/', (req, res) => {
     res.send('Hello world')
