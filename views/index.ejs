@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #212529;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .welcome-container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        h1{
+   
+   text-align: center;
+   margin: auto;
+}
+
+#title{
+   max-width: fit-content;
+   display: block;
+   text-align: center;
+}
+body{
+   display: -ms-inline-flexbox;
+   position: relative ;
+   margin-left: auto;
+   margin-right: auto;
+   width: 8em;
+   background-color: rgb(24, 179, 81);
+   align-items: center;
+}
+#author{
+   display: block;
+}
+    </style>
+</head>
+<body>
+    <h1>Blog Posts</h1>
+    <ul id="postList"></ul>
+    <form id="postForm">
+    <input type="text" id="title" placeholder="Title">
+    <textarea id="content" placeholder="Content"></textarea>
+    <input type="text" id="author" placeholder="Author">
+    <button type="submit">add post</button>
+    </form>
+ <script src="/scripts.js"></script>
+</body>
+</html>
